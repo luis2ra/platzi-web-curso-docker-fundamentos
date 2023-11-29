@@ -1,10 +1,4 @@
-FROM python:3.12-alpine3.17
+FROM nginx:latest
 
-WORKDIR /app
-
-COPY requirements.txt requirements.txt
-RUN pip install -r requirements.txt
-
-COPY . .
-
-CMD [ "python", "-m", "flask", "run", "--host=0.0.0.0" ]
+# Path: /usr/share/nginx/html
+COPY /sitio /usr/share/nginx/html 
